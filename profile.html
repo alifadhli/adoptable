@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="./assets/images/logo.png">
+
+  <title>adoptable</title>
+	<!--links animate.css-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/profile.css" rel="stylesheet" type="text/css">
+
+
+	
+</head>
+<body>
+    <div class="hero-head animated fadeInDown">
+      <div class="container">
+        <nav class="nav">
+          <div class="container">
+            <div class="nav-left">
+              <a class="nav-item" href="./index.html">
+                ad
+                <img src="assets/images/logo.png" alt="adoptable logo">
+                ptable
+              </a>
+            </div>
+            <div class="nav-right nav-menu">
+              <a id="nav-home" class="nav-item is-tab" href="index.html">
+                Home 
+              </a>
+               <a id="nav-profile" class="nav-item is-tab is-active" href="profile.html"> Profile
+              </a>
+               <a id="nav-find" class="nav-item is-tab" href="find.html">
+                Find
+              </a>
+              <a id="nav-about" class="nav-item is-tab" href="about.html">
+                About 
+              </a>
+              <span id="nav-login" class="nav-item">
+                <a class="button" id='loginForm' href="login.html">
+                  Log in
+                </a>
+                <a class="button is-info" id='signUpForm' href="register.html">
+                  Sign up
+                </a>
+              </span>
+              <span id="nav-logout" class="nav-item">
+                <a class="button" id='logOut' href="">
+                  Log Out
+                </a>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="container profile">
+
+    <div class="section profile-heading animated slideInLeft">
+      <div class="columns level">
+        <div class="column is-2">
+          <div class="image is-128x128 avatar">
+            <img id="avatar-img" src="https://placehold.it/256x256">
+          </div>
+        </div>
+        <div class="column name">
+          <p>
+            <span class="title is-bold">Welcome, <span id="user-email"></span></span>
+            <!-- <span class="button is-primary is-outlined follow">Follow</span> -->
+          </p>
+          <!-- <p class="tagline">The users profile bio would go here, of course. It could be two lines</p> -->
+        </div>
+      </div>
+    </div>
+    <div class="box animated zoomIn" >
+      <!-- Main container -->
+      <nav class="level">
+          <div class="level-item">
+            <p class="menu-label has-text-centered has-shadow is-5">
+              your favorite adoptables
+            </p>
+          </div>
+      </nav>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="columns" id="favorites">
+
+
+    </div>
+  </div>
+
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title"></p>
+      </header>
+      <section class="modal-card-body"></section>
+    </div>
+  </div>
+
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script src="assets/javascript/base.js"></script>
+	<script src="assets/javascript/profile.js"></script>
+</body>
+</html>

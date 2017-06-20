@@ -1,0 +1,445 @@
+  <html>
+<head>
+  <meta charset="utf-8">
+	<link rel="icon" href="./assets/images/logo.png">
+
+  <title>adoptable</title>
+	<!--links animate.css-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="assets/css/find.css">
+</head>
+<body>
+    <div class="hero-head animated fadeInDown">
+      <div class="container">
+        <nav class="nav">
+          <div class="container">
+            <div class="nav-left">
+              <a class="nav-item" href="./index.html">
+                ad
+                <img src="assets/images/logo.png" alt="adoptable logo">
+                ptable
+              </a>
+            </div>
+            <div class="nav-right nav-menu">
+              <a id="nav-home" class="nav-item is-tab" href="index.html">
+                Home 
+              </a>
+               <a id="nav-profile" class="nav-item is-tab" href="profile.html"> Profile
+              </a>
+               <a id="nav-find" class="nav-item is-tab is-active" href="find.html">
+                Find
+              </a>
+              <a id="nav-about" class="nav-item is-tab" href="about.html">
+                About 
+              </a>
+              <span id="nav-login" class="nav-item">
+                <a class="button" id='loginForm' href="login.html">
+                  Log in
+                </a>
+                <a class="button is-info" id='signUpForm' href="register.html">
+                  Sign up
+                </a>
+              </span>
+              <span id="nav-logout" class="nav-item">
+                <a class="button" id='logOut' href="">
+                  Log Out
+                </a>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+<!-- Begin Body -->
+<div class="container find">
+  <div class="columns">
+    <div id="searchBox" class="column is-2">
+      <div class="box animated slideInLeft">
+      <!-- <br> -->
+      <h1 class="has-text-centered"><b>I'm Looking For Adoptable</b></h1>
+      <hr>
+      <div class="field is-horizontal">
+        <br>
+          <div class="field-body">
+            <div class="field is-grouped" id="animalField">
+              <div id="animalSelection" class="control">
+                <label><input id="cat" type="radio" name="toggler" data-value="cat"/>Cats</label>
+                <label><input id="dog" type="radio" name="toggler" data-value="dog"/>Dogs</label>
+              </div>
+            </div>
+              <div class='editBtn editAnimal hidden'>
+                <a class='button is-info'>edit</a>
+              </div>            
+          </div>
+      </div>
+      <hr>
+
+      <div class="field is-horizontal">
+        <!-- <div class="field-label">
+          <label class="label">Age</label>
+        </div> -->
+        <br>
+        <div class="field-body">
+          <div class="field is-grouped" id="ageField">
+            <div id="ageSelection" class="control">
+              <label class="radio">
+                <input id="adult" type="radio" name="age" data-value="adult">
+                Adult
+              </label>
+              <label class="radio">
+                <input id="senior" type="radio" name="age" data-value="senior">
+                Senior
+              </label>
+            </div>
+          </div>
+            <div class='editBtn editAge hidden'>
+              <a class='button is-info'>edit</a>
+            </div>         
+        </div>
+      </div>
+      <hr>
+    <!-- show this if dog selected -->
+      <div class="field is-horizontal toHide" id="sizeSelector" style="display:none">
+        <br>
+        <div class="field-body">
+          <div class="field is-narrow" id="sizeField">
+            <div id="sizeSelection" class="control" align="center">
+              <label class="radio">
+                <input type="radio" name="size" id="small" data-value="S">
+                  Small
+                </label>
+              <label class="radio">
+                <input type="radio" name="size" id="medium" data-value="M">
+                Medium
+              </label>
+              <label class="radio">
+                <input type="radio" name="size" id="large" data-value="L">
+                Large
+              </label>
+            </div><hr>
+          </div>
+              <div class='editBtn editSize hidden'>
+                <a class='button is-info'>edit</a>
+              </div>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input class="input" type="text" name="location" id="zipcode" placeholder="zipcode">
+        </p>
+      </div>
+      <hr>
+      <div class="is-centered">
+        <a id="save" class="button is-normal"><img src="assets/images/logo.png">Find Pets</a>
+      </div>
+    </div>
+    </div>
+
+    <!-- begin populating data here -->
+    <div class="column is-10">
+    <div class="box petContainer hidden">
+      <div class="columns">
+        <div class="column">
+
+          <div class="card animated slideInUp">
+            
+              <div class="card-image">
+                <figure class="image is-4by3 image-0">
+                <img class="img-pet" id="image-0">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  <h1 class="title is-5 title-0"></h1>
+                  <h2 class="subtitle is-6 subtitle-0"></h2>
+                </div>
+              </div>
+              
+              <footer class="card-footer">
+
+                <a class="card-footer-item favorite" data-value="0">&hearts; Favorite</button>
+                <a class="card-footer-item details" data-target="#modal-0" >Details</a>
+              </footer>            
+          </div>
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-3">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-3"></h1>
+                <h2 class="subtitle is-6 subtitle-3"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+
+              <a class="card-footer-item favorite" data-value="3">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-3" >Details</a>
+            </footer>           
+          </div> 
+
+          <div class="card animated slideInUp">
+            
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img class="img-pet" id="image-6">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  <h1 class="title is-5 title-6"></h1>
+                  <h2 class="subtitle is-6 subtitle-6"></h2>
+                </div>
+              </div>
+              
+              <footer class="card-footer">
+
+                <a class="card-footer-item favorite" data-value="6">&hearts; Favorite</button>
+                <a class="card-footer-item details" data-target="#modal-6" >Details</a>
+              </footer>           
+          </div>
+        </div>
+
+        <div class="column">
+
+          <div class="card animated slideInUp">
+            
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img class="img-pet" id="image-1">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-centered">
+                  <h1 class="title is-5 title-1"></h1>
+                  <h2 class="subtitle is-6 subtitle-1"></h2>
+                </div>
+              </div>
+              
+              <footer class="card-footer">
+                <a class="card-footer-item favorite" data-value="1">&hearts; Favorite</button>
+                <a class="card-footer-item details" data-target="#modal-1" >Details</a>
+              </footer>
+          </div>
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-4">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-4"></h1>
+                <h2 class="subtitle is-6 subtitle-4"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+
+              <a class="card-footer-item favorite" data-value="4">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-4" >Details</a>
+            </footer>
+          </div>
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-7">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-7"></h1>
+                <h2 class="subtitle is-6 subtitle-7"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+
+              <a class="card-footer-item favorite" data-value="7">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-7" >Details</a>
+            </footer>         
+          </div>                                                                  
+        </div>
+        <div class="column">
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-2">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-2"></h1>
+                <h2 class="subtitle is-6 subtitle-2"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+
+              <a class="card-footer-item favorite" data-value="2">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-2" >Details</a>
+            </footer>          
+          </div>
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-5">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-5"></h1>
+                <h2 class="subtitle is-6 subtitle-5"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+
+              <a class="card-footer-item favorite" data-value="5">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-5" >Details</a>
+            </footer>        
+          </div>
+
+          <div class="card animated slideInUp">
+            
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="img-pet" id="image-8">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content has-text-centered">
+                <h1 class="title is-5 title-8"></h1>
+                <h2 class="subtitle is-6 subtitle-8"></h2>
+              </div>
+            </div>
+            
+            <footer class="card-footer">
+              <a class="card-footer-item favorite" data-value="8">&hearts; Favorite</button>
+              <a class="card-footer-item details" data-target="#modal-8" >Details</a>
+            </footer>
+              
+            </div>            
+          </div>                                                                  
+        </div>             
+      <a class="button" id="prevPage">prev page</a>
+      <a class="button" id="nextPage">next page</a>
+    </div>
+    </div>
+    <!-- end data here -->
+
+  <!-- pet info modal -->
+  <div class="modal" id="modal-0">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title0" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body0" class="modal-card-body"></section>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-1">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title1" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body1" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-2">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title2" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body2" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-3">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title3" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body3" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-4">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title4" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body4" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-5">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title5" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body5" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-6">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title6" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body6" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-7">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title7" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body7" class="modal-card-body"></section>
+    </div>
+  </div>
+  <div class="modal" id="modal-8">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p id="modal-title8" class="modal-card-title"></p>
+      </header>
+      <section id="modal-body8" class="modal-card-body"></section>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+<!-- End Body -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<!-- 	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <script src="assets/javascript/bulma.js"></script>
+  <script src="assets/javascript/base.js"></script>
+	<script src="assets/javascript/find.js"></script>
+</body>
+</html>
